@@ -1,12 +1,14 @@
 import React from 'react';
 
+import Todo from './Todo';
+
 class ToDoList extends React.Component {
     render() {
         const { todos } = this.props;
         return (
             <ul>
                 {todos.map((todo, i) => (
-                    <li key={i}>{todo.task}</li>
+                    <Todo task={todo.task} key={i} />
                 ))}
             </ul>
         );

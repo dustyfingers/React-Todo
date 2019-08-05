@@ -14,7 +14,7 @@ class App extends React.Component {
   create = newTodo => {
     this.setState({
       todos: [...this.state.todos, newTodo]
-    })
+    });
   };
 
   render() {

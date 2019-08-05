@@ -8,7 +8,8 @@ class ToDoForm extends React.Component {
 
     handleSubmit = evt => {
         evt.preventDefault();
-        this.props.createTodo({ ...this.state, completed: false })
+        this.props.createTodo({ ...this.state, id: Date.now(), completed: false });
+        this.setState({ task: '' });
     };
 
     handleChange = evt => {
