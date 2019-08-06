@@ -24,8 +24,9 @@ class App extends React.Component {
 
   toggleComplete = (id) => {
     console.log(`toggleComplete called on todo with id: ${id}`)
+    // TODO: this throws 'completed is undefined'
     //const todos = this.state.todos.map(todo => todo.id === id ? { ...todo, completed: !completed } : todo);
-    this.setState({ todos });
+    // this.setState({ todos });
   };
 
   render() {
