@@ -20,6 +20,7 @@ class ToDoForm extends React.Component {
 
     render() {
         const { task } = this.state;
+        const { clearTodos } = this.props;
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
@@ -32,6 +33,7 @@ class ToDoForm extends React.Component {
                         onChange={this.handleChange} />
                 </label>
                 <input type="submit" />
+                <button onClick={clearTodos}>Clear</button>
             </form>
         );
     };

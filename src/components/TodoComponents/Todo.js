@@ -2,9 +2,9 @@ import React from 'react';
 
 class Todo extends React.Component {
     render() {
-        const { task } = this.props;
+        const { task, toggleComplete, id } = this.props;
         return (
-            <div>{task}</div>
+            <div onClick={() => toggleComplete(id)}>{task}</div>
         );
     }
 };

@@ -11,10 +11,21 @@ class App extends React.Component {
     };
   }
 
-  create = newTodo => {
+  createTodo = newTodo => {
     this.setState({
       todos: [...this.state.todos, newTodo]
     });
+  };
+
+  clearTodos = () => {
+    this.setState({ todos: [] });
+    console.log('clearTodos called!');
+  };
+
+  toggleComplete = (id) => {
+    console.log(`toggleComplete called on todo with id: ${id}`)
+    //const todos = this.state.todos.map(todo => todo.id === id ? { ...todo, completed: !completed } : todo);
+    this.setState({ todos });
   };
 
   render() {
@@ -22,8 +33,12 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <ToDoForm createTodo={this.create} />
-        <ToDoList todos={todos} />
+        <ToDoForm
+          createTodo={this.createTodo}
+          clearTodos={this.clearTodos} />
+        <ToDoList
+          todos={todos}
+          toggleComplete={this.toggleComplete} />
       </div>
     );
   }
